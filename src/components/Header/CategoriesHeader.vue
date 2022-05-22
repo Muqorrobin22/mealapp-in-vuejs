@@ -1,10 +1,16 @@
 <template>
   <header>
     <div class="title">
-      <h1>See All The Delicious Food</h1>
+      <h1>{{ nameCategories }} Meals</h1>
     </div>
   </header>
 </template>
+
+<script>
+export default {
+  props: ["nameCategories"],
+};
+</script>
 
 <style lang="scss" scoped>
 header {
@@ -17,7 +23,8 @@ header {
   .title {
     text-align: center;
     h1 {
-      font-size: 2.4rem;
+      font-size: 4rem;
+      font-weight: 500;
     }
   }
 }

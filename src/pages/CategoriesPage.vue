@@ -1,5 +1,5 @@
 <template>
-  <categories-header></categories-header>
+  <categories-header :name-categories="this.categories"></categories-header>
   <div class="card-wrap">
     <categories-card
       v-for="category in filterCategories"
