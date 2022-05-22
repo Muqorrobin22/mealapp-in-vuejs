@@ -1,25 +1,21 @@
 <template>
-  <router-link
-    :to="{ name: 'categories', params: { categories: strCategory } }"
-  >
-    <div class="card">
-      <div class="cover"></div>
-      <img :src="strCategoryThumb" alt="gambar2" />
-      <h1>{{ strCategory }}</h1>
-    </div>
-  </router-link>
+  <div class="card">
+    <div class="cover"></div>
+    <img :src="strCategoryThumb" alt="gambar2" />
+    <h1>{{ strCategory }}</h1>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ["strCategory", "strCategoryThumb", "idCategory"],
+  props: ["strCategory", "strCategoryThumb", "idCategory", "id"],
 };
 </script>
 
 <style lang="scss" scoped>
 .card {
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -41,6 +37,7 @@ export default {
   }
   h1 {
     position: absolute;
+    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -48,6 +45,7 @@ export default {
     font-size: 3rem;
     letter-spacing: 2px;
     font-weight: 600;
+    width: 80%;
   }
   &:hover .cover {
     opacity: 0.6;
