@@ -1,9 +1,11 @@
 <template>
-  <div class="card">
-    <div class="cover"></div>
-    <img :src="strCategoryThumb" alt="gambar2" />
-    <h1>{{ strCategory }}</h1>
-  </div>
+  <router-link :to="{ name: 'details', params: { details: id } }">
+    <div class="card">
+      <div class="cover"></div>
+      <img :src="strCategoryThumb" alt="gambar2" />
+      <h1>{{ strCategory }}</h1>
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -14,8 +16,8 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
