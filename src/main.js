@@ -4,6 +4,8 @@ import App from "./App.vue";
 import HomePage from "./pages/HomePage.vue";
 import CategoriesPage from "./pages/CategoriesPage.vue";
 import DetailPage from "./pages/DetailPage.vue";
+import NotFound from "./pages/NotFound.vue";
+import FirstPage from "./pages/FirstPage.vue";
 
 const app = createApp(App);
 
@@ -12,6 +14,10 @@ const router = createRouter({
   routes: [
     {
       path: "/",
+      component: FirstPage,
+    },
+    {
+      path: "/foods",
       component: HomePage,
     },
     {
@@ -26,7 +32,21 @@ const router = createRouter({
       component: DetailPage,
       props: true,
     },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "NotFound",
+      component: NotFound,
+    },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return {
+      top: 0,
+      left: 0,
+    };
+  },
 });
 
 app.use(router);

@@ -30,4 +30,7 @@ export default {
 :root {
   font-size: 10px;
 }
+body {
+  background-color: #eff1f7;
+}
 </style>

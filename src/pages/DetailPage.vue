@@ -1,15 +1,10 @@
 <template>
   <detail-header
     :name-categories="this.filterCategories.strMeal"
+    :name-prev-categories="categories"
+    :name-id="details"
   ></detail-header>
   <div class="card-wrap">
-    <!-- <detail-app
-      v-for="category in filterCategories"
-      :key="category.strMeal"
-      :str-category="category.strMeal"
-      :str-category-thumb="category.strMealThumb"
-      :id="category.idMeal"
-    ></detail-app> -->
     <detail-app
       :str-instruction="this.filterCategories.strInstructions"
       :str-thumb="this.filterCategories.strMealThumb"

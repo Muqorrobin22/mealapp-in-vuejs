@@ -1,7 +1,7 @@
 <template>
   <main class="wrap">
     <section class="region">
-      <h1>{{ nameRegion }}</h1>
+      <h1>{{ nameRegion }} Culinary</h1>
     </section>
     <section class="first">
       <div class="first-img">
@@ -24,11 +24,8 @@
     </section>
     <section class="second">
       <h1>Tutorials</h1>
-      <iframe width="330" height="330" :src="strYoutube"> </iframe>
-
-      <!-- <video-embed
-        src="https://www.youtube.com/watch?v=s4ObxcdXoFE"
-      ></video-embed> -->
+      <iframe :src="strYoutube ? strYoutube.replace('watch?v=', 'embed/') : ''">
+      </iframe>
     </section>
   </main>
 </template>
@@ -86,8 +83,10 @@ main.wrap {
           letter-spacing: 2px;
         }
         p {
+          text-align: justify;
           margin-top: 2rem;
           letter-spacing: 1.2px;
+          line-height: 3.5rem;
         }
         ul {
           margin-top: 2rem;
@@ -99,6 +98,56 @@ main.wrap {
       }
       .bottom {
         margin-top: 3rem;
+      }
+    }
+  }
+  @media (min-width: 570px) {
+    section.first {
+      .first-img {
+        width: 450px !important;
+        height: 450px !important;
+      }
+
+      .first-info {
+        .top,
+        .bottom {
+          font-size: 2.4rem;
+
+          h1 {
+            font-size: 2.8rem !important;
+          }
+          p {
+            font-size: 2.4rem !important;
+            line-height: 4.5rem;
+          }
+          ul {
+            li {
+              font-size: 2.4rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1100px) {
+    section.first {
+      flex-direction: row;
+      align-items: flex-start;
+      .first-img {
+        widows: 400px !important;
+        height: 500px !important;
+        flex-basis: 50%;
+        margin-top: 4rem;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .first-info {
+        flex-basis: 50%;
+        margin-left: 3rem;
       }
     }
   }
@@ -114,6 +163,16 @@ main.wrap {
       font-size: 2.4rem;
       font-weight: 600;
       letter-spacing: 2px;
+    }
+    iframe {
+      margin-top: 5rem;
+      height: 300px;
+    }
+
+    @media (min-width: 1100px) {
+      iframe {
+        height: 600px;
+      }
     }
   }
 }
