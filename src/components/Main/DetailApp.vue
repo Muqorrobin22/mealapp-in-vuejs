@@ -16,9 +16,16 @@
         </div>
         <div class="bottom">
           <h1>Recipes</h1>
-          <ul>
-            <li>coba</li>
-          </ul>
+          <div>
+            <ul>
+              <li v-for="data in ingredients" :key="data">
+                {{ data }}
+              </li>
+            </ul>
+            <ul>
+              <li v-for="data in measures" :key="data">{{ data }}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -32,7 +39,23 @@
 
 <script>
 export default {
-  props: ["strYoutube", "strThumb", "strInstruction", "nameRegion"],
+  props: [
+    "strYoutube",
+    "strThumb",
+    "strInstruction",
+    "nameRegion",
+    "strIngredients",
+    "strMeasures",
+  ],
+  computed: {
+    ingredients() {
+      return this.strIngredients;
+    },
+
+    measures() {
+      return this.strMeasures;
+    },
+  },
 };
 </script>
 
@@ -90,7 +113,7 @@ main.wrap {
         }
         ul {
           margin-top: 2rem;
-          text-align: center;
+          text-align: justify;
           li {
             list-style-position: inside;
           }
@@ -98,6 +121,15 @@ main.wrap {
       }
       .bottom {
         margin-top: 3rem;
+        div {
+          display: flex;
+          ul:nth-child(2) {
+            margin-left: 1rem;
+            li {
+              list-style: none;
+            }
+          }
+        }
       }
     }
   }

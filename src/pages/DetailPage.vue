@@ -10,6 +10,8 @@
       :str-thumb="this.filterCategories.strMealThumb"
       :str-youtube="this.filterCategories.strYoutube"
       :name-region="this.filterCategories.strArea"
+      :str-ingredients="getIngredients"
+      :str-measures="getMeasure"
     ></detail-app>
   </div>
 </template>
@@ -38,6 +40,24 @@ export default {
     const data = await response.json();
 
     this.filterCategories = data.meals[0];
+  },
+  computed: {
+    getIngredients() {
+      const recipes = Object.keys(this.filterCategories)
+        .filter((key) => key.includes("strIngredient"))
+        .map((key) => this.filterCategories[key])
+        .filter((val) => val);
+
+      return recipes;
+    },
+    getMeasure() {
+      const measure = Object.keys(this.filterCategories)
+        .filter((key) => key.includes("strMeasure"))
+        .map((data) => this.filterCategories[data])
+        .filter((val) => val);
+
+      return measure;
+    },
   },
 };
 </script>
