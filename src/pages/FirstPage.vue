@@ -12,9 +12,12 @@
 
 <style lang="scss" scoped>
 section.wrap {
+  @media (min-width: 1100px) {
+    margin: 0 -10rem;
+  }
   height: 83.7vh;
   width: 100vw;
-  margin: 0 -10rem;
+  margin: 0 -7rem;
   background: #232127;
   position: relative;
   .img {
