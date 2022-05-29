@@ -1,8 +1,7 @@
-# cmlabs-frontend-internship-test
+# Mealapp with Vue js
 
-This project is for requirement test internship in PT CMLABS INDONESIA DIGITAL.
 
-See Live Project in --> https://cmlabs-frontend-internship-test.netlify.app/
+See Live Project in --> https://mealapp-by-robin.netlify.app/
 
 OR 
 
